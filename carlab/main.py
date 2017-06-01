@@ -1,6 +1,6 @@
 from car_class import Car
 
-car1 = Car('an average car color', 1)
+car1 = Car()
 car2 = Car('red', 2)
 car3 = Car('green', 5)
 
