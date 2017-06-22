@@ -1,0 +1,82 @@
+@import 'vars';
+
+$bg: background;
+
+@mixin myaAwesomeMixin($color, $sizeOfFont) {
+  background: $color;
+  border: dashed 2px;
+  font-size: $sizeOfFont;
+}
+
+@function sizeMaker($target, $container) {
+  @return ($target/$container) * 100%;
+}
+
+@each $x in map_keys($myMap) {
+  .while-#{$x} {
+    width: map_get($myMap, $x);
+  }
+}
+
+@for $i from 1 through length($contentList) {
+  li:nth-child(#{$i}){
+    background: nth($contentList, $i);
+  }
+}
+
+@while $numType > 0 {
+  div:nth-child(#{$numType}){
+    width: percentage($numType);
+  }
+  $numType: $numType - 1
+}
+
+
+div {
+  width: sizeMaker(650px, 1000px);
+}
+
+/*
+HELLO!!
+This is so cool
+*/
+
+//Single
+
+div {
+  @include myaAwesomeMixin(green, 4em);
+  background:darken($mainColor, 40%);
+  border: solid rgba($mainColor, 0.5);
+  //color: fade_out($mainColor, 0.5);
+  aside {
+    background: green;
+    blockquote {
+      background: blue;
+    }
+    &:hover {
+      background: lighten(green, 20%);
+    }
+  }
+  &:hover{}
+
+}
+
+img {
+  max-width: 75%;
+}
+
+section {
+  @extend div;
+  padding: 20px;
+  margin: 20px;
+  @include myaAwesomeMixin(blue, 1em);
+  background: $mainColor;
+  &:hover {
+    border: solid 5px;
+  }
+  &:visited {
+    background: $mainColor;
+  }
+}
+
+

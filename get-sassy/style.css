@@ -1,0 +1,72 @@
+.while-a {
+  width: 50%; }
+
+.while-b {
+  width: 25%; }
+
+.while-c {
+  width: 40%; }
+
+li:nth-child(1) {
+  background: red; }
+
+li:nth-child(2) {
+  background: green; }
+
+li:nth-child(3) {
+  background: blue; }
+
+li:nth-child(4) {
+  background: black; }
+
+div:nth-child(5), section:nth-child(5) {
+  width: 500%; }
+
+div:nth-child(4), section:nth-child(4) {
+  width: 400%; }
+
+div:nth-child(3), section:nth-child(3) {
+  width: 300%; }
+
+div:nth-child(2), section:nth-child(2) {
+  width: 200%; }
+
+div:nth-child(1), section:nth-child(1) {
+  width: 100%; }
+
+div, section {
+  width: 65%; }
+
+/*
+HELLO!!
+This is so cool
+*/
+div, section {
+  background: green;
+  border: dashed 2px;
+  font-size: 4em;
+  background: #330000;
+  border: solid rgba(255, 0, 0, 0.5); }
+  div aside, section aside {
+    background: green; }
+    div aside blockquote, section aside blockquote {
+      background: blue; }
+    div aside:hover, section aside:hover {
+      background: #00e600; }
+
+img {
+  max-width: 75%; }
+
+section {
+  padding: 20px;
+  margin: 20px;
+  background: blue;
+  border: dashed 2px;
+  font-size: 1em;
+  background: red; }
+  section:hover {
+    border: solid 5px; }
+  section:visited {
+    background: red; }
+
+/*# sourceMappingURL=style.css.map */
