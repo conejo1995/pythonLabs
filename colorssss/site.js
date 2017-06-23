@@ -93,4 +93,4 @@ yellow.toHex();  //> '#FFFF00'
 var purple = new Color(255, 0, 255);
 purple.toHex();  //> '#FF00FF'
 var white = yellow.blendAdd(purple);
-white.toHex(); 
+white.toHex();
