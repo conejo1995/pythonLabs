@@ -102,7 +102,7 @@ document.getElementById('reset').addEventListener('click', function(e){
   document.getElementById('message').innerHTML = '';
 });
 
-var dieDivs = document. getElementsByClassName('dieClick');
+var dieDivs = document.getElementsByClassName('dieClick');
 
 Array.from(dieDivs).forEach(function(el){
   el.addEventListener('click', function(){
