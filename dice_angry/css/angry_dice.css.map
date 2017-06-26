@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACF,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;;AAG3B,YAAa;EACT,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,eAAe;EACvB,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,OAAO;EACf,eAAe,EAAE,OAAO;EACxB,gBAAgB,EAAE,sEAAsE;EACxF,eAAe,EAAE,IAAI;EACrB,mBAAmB,EAAE,MAAM",
+"sources": ["angry_dice.scss"],
+"names": [],
+"file": "angry_dice.css"
+}

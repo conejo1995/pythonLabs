@@ -1,0 +1,15 @@
+#game {
+  display: flex;
+  justify-content: center; }
+
+#die1, #die2 {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+  background-size: contain;
+  background-image: url("C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/1.png");
+  background-size: 190%;
+  background-position: center; }
+
+/*# sourceMappingURL=angry_dice.css.map */
