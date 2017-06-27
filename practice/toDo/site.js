@@ -16,15 +16,6 @@ function addToList(task){
     checkbox.name = "name";
     checkbox.value = "value";
     checkbox.id = "id";
-    // if (guess > num){
-    //     message = 'You guessed higher than the number';
-    // }
-    // else if (guess < num){
-    //     message = 'You guessed lower than the number';
-    // }
-    // else{
-    //     message = ('You Win!! The number was ' + num);
-    // }
     li.appendChild(document.createTextNode(task));
     li.appendChild(checkbox);
     list.appendChild(li);
