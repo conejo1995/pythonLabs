@@ -4,129 +4,127 @@
 
 // var val = Math.floor(Math.random() * 6) + 1;
 var round = 1;
+var valOne = 1;
+var valTwo = 1;
+var heldOne = false;
+var heldTwo = false;
+var idOne = "die1";
+var idTwo = "die2";
 
+function setVal(){
+  var val = Math.floor(Math.random() * 6) + 1;
+  if(!heldOne) {
+      valOne = val;
+  }
+  changeBackground(valOne, idOne, heldOne);
+  val = Math.floor(Math.random() * 6) + 1;
+  if(!heldTwo) {
+      valTwo = val;
+  }
+  changeBackground(valTwo, idTwo, heldTwo);
 
-function Die (id) {
-  this.dieImage = ""
-  this.id = id;
-  this.val = 0;
-  this.held = false;
-  this.setVal= function(){
-    if(!this.held) {
-        this.val = Math.floor(Math.random() * 6) + 1;
-        if(this.val == 1){
-          this.dieImage = "C:\Users\Conner\Desktop\Web_Bootcamp\Labs\dice_angry\imgs\die_01_42158_sm.jpg";
-          document.getElementById(this.id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/1.png')";
+}
+
+function changeBackground(value, id, held){
+  if(!held) {
+        if(value == 1){
+          // $(id).css('background-image', 'url(C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/1.png)');
+          document.getElementById(id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/1.png')";
         }
-        else if(this.val == 2){
-          this.dieImage = "C:\Users\Conner\Desktop\Web_Bootcamp\Labs\dice_angry\imgs\die_02_42159_sm.jpg";
-          document.getElementById(this.id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/2.png')";
+        else if(value == 2){
+          document.getElementById(id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/2.png')";
         }
-        else if(this.val == 3){
-          this.dieImage = "C:\Users\Conner\Desktop\Web_Bootcamp\Labs\dice_angry\imgs\die_03_42160_sm.jpg";
-          document.getElementById(this.id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/angry.png')";
+        else if(value == 3){
+          document.getElementById(id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/angry.png')";
         }
-        else if(this.val == 4){
-          this.dieImage = "C:\Users\Conner\Desktop\Web_Bootcamp\Labs\dice_angry\imgs\die_04_42161_sm.jpg";
-          document.getElementById(this.id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/4.png')";
+        else if(value == 4){
+          document.getElementById(id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/4.png')";
         }
-        else if(this.val == 5){
-          this.dieImage = "C:\Users\Conner\Desktop\Web_Bootcamp\Labs\dice_angry\imgs\die_05_42162_sm.jpg";
-          document.getElementById(this.id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/5.png')";
+        else if(value == 5){
+          document.getElementById(id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/5.png')";
         }
-        else if(this.val == 6){
-          this.dieImage = "C:\Users\Conner\Desktop\Web_Bootcamp\Labs\dice_angry\imgs\die_06_42164_sm.jpg";
-          document.getElementById(this.id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/6.png')";
+        else if(value == 6){
+          document.getElementById(id).style.backgroundImage = "url('C:/Users/Conner/Desktop/Web_Bootcamp/Labs/dice_angry/imgs/6.png')";
         }
 
     }
 
-  };
-
 }
 
 function changeRound(){
-  document.getElementById('round').innerHTML = round.toString();
+  $('#round').html(round.toString());
+  // document.getElementById('round').innerHTML = round.toString();
 }
 
 function releaseHold(){
-  die1.held = false;
-  die2.held = false;
-  document.getElementById(die1.id).style.borderColor = 'black';
-  document.getElementById(die2.id).style.borderColor = 'black';
+  heldOne = false;
+  heldTwo = false;
+  document.getElementById(idOne).style.borderColor = 'black';
+  document.getElementById(idTwo).style.borderColor = 'black';
 }
 
 function checkRound(){
-  if(die1.val == 3 && die2.val == 3){
+  if(valOne == 3 && valTwo == 3){
       round = 1;
       changeRound();
       releaseHold();
       document.getElementById('message').innerHTML = "Angry Dice, Start Over"
   }
-  else if(round == 1 && die1.val + die2.val == 3){
+  else if(round == 1 && valOne + valTwo == 3){
     round = 2;
     changeRound();
     releaseHold();
 
   }
-  else if(round == 2 && ((die1.val == 3 && die2.val == 4) || (die1.val == 4 && die2.val == 3))){
+  else if(round == 2 && ((valOne == 3 && valTwo == 4) || (valOne == 4 && valTwo == 3))){
     round = 3;
     changeRound();
     releaseHold();
   }
-  else if(round == 3 && die1.val + die2.val === 11){
+  else if(round == 3 && valOne + valTwo === 11){
     document.getElementById('message').innerHTML = 'You Win!!!';
     changeRound();
     releaseHold();
   }
-
-
 }
 
-var die1 = new Die('die1');
-var die2 = new Die('die2');
-
-document.getElementById('roll').addEventListener('click', function(e){
+$('#roll').click(function(e){
   e.preventDefault();
-  die1.setVal();
-  die2.setVal();
-  document.getElementById('message').innerHTML = '';
+  setVal();
+  setVal();
+  $('#message').html("");
   checkRound();
-
+  console.log(valOne, valTwo);
 });
 
-document.getElementById('reset').addEventListener('click', function(e){
+
+$('#reset').click(function(e){
   e.preventDefault();
   round = 1;
   changeRound();
-  document.getElementById('message').innerHTML = '';
-});
+  $('#message').html("");
 
-var dieDivs = document.getElementsByClassName('dieClick');
-
-Array.from(dieDivs).forEach(function(el){
-  el.addEventListener('click', function(){
-
-    if(this.id == 'die1' && !die1.held && !(die1.val == 6)){
-      die1.held = true;
-      this.style.borderColor = 'red';
-    }
-    else if(this.id == 'die1' && die1.held){
-      die1.held = false;
-      this.style.borderColor = 'black';
-    }
-    else if(this.id == 'die2' && !die2.held && !(die2.val == 6)){
-      die2.held = true;
-      this.style.borderColor = 'red';
-    }
-    else if(this.id == 'die2' && die2.held){
-      die2.held = false;
-      this.style.borderColor = 'black';
-    }
-  })
 });
 
 
-//
-// console.log(die1);
-// console.log(die2);
+
+$('.dieClick').click(function(){
+
+    if($(this).attr('id') == 'die1' && !heldOne && !(valOne == 6)){
+      heldOne = true;
+      $(this).css('borderColor', 'red');
+    }
+    else if($(this).attr('id') == 'die1' && heldOne){
+      heldOne = false;
+      $(this).css('borderColor', 'black');
+    }
+    else if($(this).attr('id') == 'die2' && !heldTwo && !(valTwo == 6)){
+      heldTwo = true;
+      $(this).css('borderColor', 'red');
+    }
+    else if($(this).attr('id') == 'die2' && heldTwo){
+      heldTwo = false;
+      $(this).css('borderColor', 'black');
+    }
+});
+
