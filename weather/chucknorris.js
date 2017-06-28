@@ -18,15 +18,24 @@
 // getMeAJoke();
 
 var weatherConditions = {
-    "clear sky":"url('http://media.istockphoto.com/photos/clear-sky-picture-id182355595?k=6&m=182355595&s=612x612&w=0&h=5JSpbxQLc71sEVOkGh0o1ypZGzr01KWR1QTJ6r3Gfz0=')",
-    "few clouds":"url('http://canitbesaturdaynow.com/images/fpics/1679/033120bd5d2cfd5c05653a107622e41d.jpg')",
-    "scattered clouds":"url('https://i.ytimg.com/vi/z2UDZMu2GLU/maxresdefault.jpg')",
-    "broken clouds":"url('http://img13.deviantart.net/fa39/i/2015/052/6/1/broken_clouds_by_leo_6tos-d8ixdlv.jpg')",
-    "shower rain":"url('http://www.mikeafford.com/store/store-images/re01_example_light_rain_showers.jpg')",
-    "moderate rain":"url('http://legendsnation.com/wp-content/uploads/2016/05/rain-06.jpg')",
-    "thunderstorm":"url('http://cdn.pcwallart.com/images/thunderstorm-rain-wallpaper-3.jpg')",
-    "snow":"url('http://cdn2.hercampus.com/2016/01/17/snow1.jpg')",
-    "mist":"url('https://vignette1.wikia.nocookie.net/demigodshaven/images/f/f5/Mist.jpg/revision/latest?cb=20110102163040')"
+    "01d":"url('http://openweathermap.org/img/w/01d.png')",
+    "02d":"url('http://openweathermap.org/img/w/02d.png')",
+    "03d":"url('http://openweathermap.org/img/w/03d.png')",
+    "04d":"url('http://openweathermap.org/img/w/04d.png')",
+    "09d":"url('http://openweathermap.org/img/w/09d.png')",
+    "10d":"url('http://openweathermap.org/img/w/10d.png')",
+    "11d":"url('http://openweathermap.org/img/w/11d.png')",
+    "13d":"url('http://openweathermap.org/img/w/13d.png')",
+    "50d":"url('http://openweathermap.org/img/w/50d.png')",
+    "01n":"url('http://openweathermap.org/img/w/01n.png')",
+    "02n":"url('http://openweathermap.org/img/w/02n.png')",
+    "03n":"url('http://openweathermap.org/img/w/03n.png')",
+    "04n":"url('http://openweathermap.org/img/w/04n.png')",
+    "09n":"url('http://openweathermap.org/img/w/09n.png')",
+    "10n":"url('http://openweathermap.org/img/w/10n.png')",
+    "11n":"url('http://openweathermap.org/img/w/11n.png')",
+    "13n":"url('http://openweathermap.org/img/w/13n.png')",
+    "50n":"url('http://openweathermap.org/img/w/50n.png')"
 
 };
 
@@ -41,7 +50,14 @@ function searchByZip(zipCode) {
         type: "post",
         success: function (data) {
             console.log(data)
-            document.getElementById("body").style.backgroundImage = weatherConditions[data.weather[0].description];
+            var id = data.weather[0].id;
+
+
+            document.getElementById("body").style.backgroundImage = weatherConditions[data.weather[0].icon];
+            $("#weather").html(data.weather[0].description);
+
+
+
             $('#kelvin').html(data.main.temp);
             var cel = data.main.temp - 273.15;
             $('#celsius').html(cel);
