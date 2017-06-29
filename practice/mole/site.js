@@ -56,6 +56,7 @@ $('#reset').click(function () {
     clearInterval(timer);
     running = false;
     t = 0;
+    score = 0;
     $('#timer').html('-');
     $('#score').html('-');
 
