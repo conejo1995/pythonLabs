@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diglett Catch</title>
+    <link rel="stylesheet" href="site.scss">
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.2.0/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.2.0/build/ol.js"></script>
+
+</head>
+<body>
+<header id = 'header1' class = 'info'>
+    Time:<span id="timer">-</span>
+</header>
+<header id = 'header2' class = 'info'>
+    Score:<span id="score">-</span>
+</header>
+
+<article id = 'row1' class = 'row'>
+    <div>hole</div><div>hole</div><div>hole</div><div>hole</div>
+</article>
+<article id = 'row2' class = 'row'>
+    <div>hole</div><div>hole</div><div>hole</div><div>hole</div>
+</article>
+<article id = 'row3' class = 'row'>
+    <div>hole</div><div>hole</div><div>hole</div><div>hole</div>
+</article>
+<article id = 'row4' class = 'row'>
+    <div>hole</div><div>hole</div><div>hole</div><div>hole</div>
+</article>
+<article id = 'row5' class = 'row'>
+    <div>hole</div><div>hole</div><div>hole</div><div>hole</div>
+</article>
+
+
+<article id="buttons">
+        <article>
+            <button id="start">Start Game</button>
+        </article>
+        <article>
+            <button id="stop">Pause</button>
+        </article>
+        <article>
+            <button id="reset">New Game</button>
+        </article>
+</article>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

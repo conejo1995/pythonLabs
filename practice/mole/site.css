@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  text-align: center;
+  background-color: #a6c871; }
+
+#buttons, .row, .info {
+  display: flex;
+  justify-content: center; }
+
+div {
+  width: 7em;
+  height: 5.5em;
+  background-image: url("https://lh3.googleusercontent.com/35cwworGsxBUr4bm1Nv3RV6iDedCpQp002kqicY4tiM9nJG6_ft6YqC85gws_u-EO3gGRQY=s103");
+  background-size: contain;
+  cursor: url(http://cur.cursors-4u.net/games/gam-13/gam1282.cur), pointer;
+  color: transparent; }
+
+.info {
+  height: 2em;
+  align-items: center; }
+
+#header1 {
+  background-color: red;
+  font-size: large;
+  font-weight: bold; }
+
+#header2 {
+  background-color: white;
+  font-size: large;
+  font-weight: bold; }
+
+/*# sourceMappingURL=site.css.map */
