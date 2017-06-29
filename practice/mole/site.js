@@ -38,13 +38,15 @@ var score = 0;
 var moles = 0;
 
 $('#start').click(function () {
-    running = true;
-    timer = setInterval(function () {
-        t += 1;
-        console.log(t);
-        $('#timer').html(t);
-        updateGrid();
-    }, inter)
+    if(running == false) {
+        running = true;
+        timer = setInterval(function () {
+            t += 1;
+            console.log(t);
+            $('#timer').html(t);
+            updateGrid();
+        }, inter)
+    }
 });
 
 $('#stop').click(function () {
