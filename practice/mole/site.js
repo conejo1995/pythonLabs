@@ -111,12 +111,15 @@ function clearMoles(){
 }
 
 
+
+
+
 function updateGrid(){
     var row = rowID[Math.floor(Math.random() * 5)];
     var column = childString[Math.floor(Math.random() * 4)];
     console.log(row + column);
     var type = $(row + column).html();
-    // console.log(type);
+    console.log(moles + " moles");
     if(t%10 == 0){
         inter -= 100;
         clearInterval(timer);
@@ -143,7 +146,7 @@ function updateGrid(){
     else{
         updateGrid();
     }
-
+    console.log(moles + " moles");
 
 
 
