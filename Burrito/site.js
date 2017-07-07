@@ -107,7 +107,7 @@ $("[name='delivery']").on('change', function(){
 
 $("[type='submit']").click(function(e){
   e.preventDefault();
-  document.getElementById("error-messages").innerHTML = "";
+  document.getElementById("error-messages").innerHTML = "Please correct the following errors before proceeding.<br>";
   var valid1 = validName();
   var valid2 = validCreditCard();
   var valid3 = validCVV();
@@ -134,7 +134,7 @@ function validName(){
         return true;
     }
     else{
-        $("#error-messages").append("• A valid name can only contain: [A-Z][a-z][,][.][ ][']<br>");
+        $("#error-messages").append("• Enter a valid name. Can only contain: [A-Z][a-z][,][.][ ]['][-]<br>");
         return false;
     }
 }
@@ -166,6 +166,7 @@ function validCreditCard() {
       return true;
   }
   else {
+      $("#error-messages").append("• Enter a credit card number.<br>");
       return false;
   }
 }
@@ -179,7 +180,7 @@ function validCVV(){
         return true;
     }
     else{
-        $("#error-messages").append("•Invalid Credit Card Number<br>");
+        $("#error-messages").append("• Enter your credit card's verification number (CVV).<br>");
         return false;
     }
 
@@ -194,7 +195,7 @@ function validZipCode(){
         return true;
     }
     else{
-        $("#error-messages").append("•A valid Zip Code has five characters, each a number from 0-9<br>");
+        $("#error-messages").append("• Enter the ZIP Code associated with the credit card.<br>");
         return false;
     }
 }
@@ -204,7 +205,7 @@ function acceptedTandC(){
         return true;
     }
     else{
-        $("#error-messages").append("•Accept the Terms and Conditions!!!<br>");
+        $("#error-messages").append("• Agree to the Terms & Conditions!!!<br>");
         return false;
     }
 
