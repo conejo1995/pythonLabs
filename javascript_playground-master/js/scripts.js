@@ -1,6 +1,3 @@
-/**
- * Created by chris on 6/23/2017.
- */
 //vars
 var name = 'Conner';
 // data types
@@ -13,7 +10,8 @@ var array = ['we would call this a list in python']
 //javascript objects (look like python dictionaries)
 var jsobj = {
     key1: 'value1',
-    'key2': 'value2'
+    'key2': 'value2',
+    key3: {},
 };
 
 // int
